@@ -61,7 +61,6 @@ async function groupExists(groupId: string) {
             }
         })
         .promise()
-
     console.log('Get group: ', result)
     return !!result.Item
 }
@@ -69,7 +68,6 @@ async function groupExists(groupId: string) {
 async function createImage(groupId: string, imageId: string, event: any) {
     const timestamp = new Date().toISOString()
     const newImage = JSON.parse(event.body)
-
     const newItem = {
         groupId,
         timestamp,
@@ -85,7 +83,6 @@ async function createImage(groupId: string, imageId: string, event: any) {
             Item: newItem
         })
         .promise()
-
     return newItem
 }
 
